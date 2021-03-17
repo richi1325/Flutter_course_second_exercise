@@ -8,6 +8,7 @@ class SliderPage extends StatefulWidget {
 class _SliderPageState extends State<SliderPage> {
 
   double _valorSlider = 200;
+  bool _check_state = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,10 @@ class _SliderPageState extends State<SliderPage> {
             ),
             SizedBox(height: 30.0),
             _crearSlider(),
+            Divider(),
+            _checkBox(),
+            Divider(),
+            _crearSwitch(),
             SizedBox(height: 30.0)
           ],
         )
@@ -33,7 +38,7 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _crearSlider() {
     return Slider(
-      onChanged: (valor) {
+      onChanged: (! _check_state) ? null : (valor) {
         setState(() {
           _valorSlider = valor; 
         });
@@ -53,5 +58,43 @@ class _SliderPageState extends State<SliderPage> {
       fit: BoxFit.contain,
     );
   }
+  Widget _checkBox() {
+
+    //return Checkbox(
+    //  value: _check_state, 
+    //  onChanged: (valor){
+    //    setState(() {
+    //      _check_state = (valor);
+    //    });
+    //  } 
+    //);
+
+    return CheckboxListTile(
+      title: Text('Mover Slider'),
+      value: _check_state,
+       onChanged: (valor){
+        setState(() {
+          _check_state = valor;
+        });
+      }
+    ); 
+
+  }
+
+  Widget _crearSwitch(){
+
+    return SwitchListTile(
+      title: Text('Activar Slider'),
+      value: _check_state,
+       onChanged: (valor){
+        setState(() {
+          _check_state = (valor);
+        });
+      }
+    );
+
+  }
+
 
 }
+

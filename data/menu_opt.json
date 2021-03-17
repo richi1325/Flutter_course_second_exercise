@@ -30,6 +30,11 @@
             "ruta":"sliders",
             "icon":"icecream",
             "texto": "Sliders"
+        },
+        {
+            "ruta":"listas",
+            "icon":"list",
+            "texto": "ListView y scroll"
         }
     ]
 }
