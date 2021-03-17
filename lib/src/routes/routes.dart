@@ -4,6 +4,8 @@ import 'package:udemy_course2/src/pages/alert_page.dart';
 import 'package:udemy_course2/src/pages/avatart_page.dart';
 import 'package:udemy_course2/src/pages/card_page.dart';
 import 'package:udemy_course2/src/pages/home_page.dart';
+import 'package:udemy_course2/src/pages/input_page.dart';
+import 'package:udemy_course2/src/pages/slider_page.dart';
 
 
 Map<String,WidgetBuilder> getAplicationRoutes(){
@@ -12,7 +14,9 @@ Map<String,WidgetBuilder> getAplicationRoutes(){
     'alert' : (BuildContext context) => AlertPage(),
     'avatar': (BuildContext context) => AvatarPage(),
     'card': (BuildContext context) => CardPage(),
-    'animatedContainer': (BuildContext context) => AnimatedContainerPage()
+    'animatedContainer': (BuildContext context) => AnimatedContainerPage(),
+    'inputs' : (BuildContext context) => InputPage(),
+    'sliders': (BuildContext context) => SliderPage()
     
   };
 }
